@@ -15,7 +15,7 @@ class Test1 {
     val rule = createComposeRule()
 
     @Test
-    fun test1() {
+    fun test() {
         rule.setContent {
             MainAppScreen()
         }
@@ -30,5 +30,17 @@ class Test1 {
         rule.onNodeWithText("Type your message").assertHasClickAction()
 
 
+    }
+
+    fun test2() {
+        rule.setContent {
+            MainAppScreen()
+        }
+
+        rule.onNodeWithTag("Third").printToLog("Rahul")
+        rule.onNodeWithTag("Third").assertHasClickAction()
+        rule.onNodeWithTag("Third").performClick()
+        rule.onNodeWithText("Type your message").assertExists()
+        rule.onNodeWithText("Type your message").assertHasClickAction()
     }
 }
