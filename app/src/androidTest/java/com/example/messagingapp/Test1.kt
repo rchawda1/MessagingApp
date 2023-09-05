@@ -31,7 +31,7 @@ class Test1 {
 
 
     }
-
+    @Test
     fun test2() {
         rule.setContent {
             MainAppScreen()
@@ -44,3 +44,4 @@ class Test1 {
         rule.onNodeWithText("Type your message").assertHasClickAction()
     }
 }
+
